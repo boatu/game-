@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fighting Game</title>
+  <style>
+    #game-container {
+      width: 400px;
+      height: 300px;
+      position: relative;
+      border: 1px solid black;
+    }
+    
+    .character {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      background-color: blue;
+    }
+    
+    #character1 {
+      left: 0;
+      top: 0;
+    }
+    
+    #character2 {
+      right: 0;
+      bottom: 0;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <div id="character1" class="character"></div>
+    <div id="character2" class="character"></div>
+  </div>
+
+  <script>
+    document.addEventListener("keydown", moveCharacter);
+
+    function moveCharacter(event) {
+      var character1 = document.getElementById("character1");
+      var character2 = document.getElementById("character2");
+      var step = 10;
+
+      switch (event.key) {
+        case "ArrowUp":
+          character1.style.top = parseInt(character1.style.top) - step + "px";
+          break;
+        case "ArrowDown":
+          character1.style.top = parseInt(character1.style.top) + step + "px";
+          break;
+        case "ArrowLeft":
+          character1.style.left = parseInt(character1.style.left) - step + "px";
+          break;
+        case "ArrowRight":
+          character1.style.left = parseInt(character1.style.left) + step + "px";
+          break;
+        case "w":
+          character2.style.top = parseInt(character2.style.top) - step + "px";
+          break;
+        case "s":
+          character2.style.top = parseInt(character2.style.top) + step + "px";
+          break;
+        case "a":
+          character2.style.left = parseInt(character2.style.left) - step + "px";
+          break;
+        case "d":
+          character2.style.left = parseInt(character2.style.left) + step + "px";
+          break;
+      }
+    }
+  </script>
+</body>
+</html>
 
